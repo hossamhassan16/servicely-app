@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:servicely_app1/core/routing/router_names.dart';
 import 'package:servicely_app1/features/splash/presentation/widgets/splash_logo_widget.dart';
-import 'package:servicely_app1/features/splash/router/splash_router_names.dart';
 
 class SplashBodySection extends StatefulWidget {
   const SplashBodySection({super.key});
@@ -25,7 +25,7 @@ class _SplashBodySectionState extends State<SplashBodySection> {
   void _navigate() {
     bool isFirstTime = true; // temporarily to test splash screen
     if (isFirstTime) {
-      context.go(SplashRouterNames.onboarding);
+      context.go(RouterNames.authStart);
     }
 
     // else {
