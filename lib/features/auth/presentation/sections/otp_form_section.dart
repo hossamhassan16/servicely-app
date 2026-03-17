@@ -1,5 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:servicely_app1/core/routing/router_names.dart';
 import 'package:servicely_app1/features/auth/presentation/widgets/otp_input_row.dart';
 import 'package:servicely_app1/features/auth/presentation/widgets/primary_button.dart';
 
@@ -28,8 +30,8 @@ class _OtpFormSectionState extends State<OtpFormSection> {
 
   void _verifyOtp() {
     if (_otpController.text == _generatedOtp) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('OTP verified successfully!')),
+      context.go(
+        RouterNames.homeScreen,
       );
     } else {
       // OTP is incorrect

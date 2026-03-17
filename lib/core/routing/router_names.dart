@@ -4,4 +4,5 @@ class RouterNames {
   static const String login = '/login';
   static const String register = '/register';
   static const String OTP = '/otp';
+  static const String homeScreen = '/homeScreen';
 }
