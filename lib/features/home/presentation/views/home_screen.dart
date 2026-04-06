@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:servicely_app1/features/home/presentation/sections/home_header_section.dart';
-import 'package:servicely_app1/features/home/presentation/widgets/category_chip.dart';
-import 'package:servicely_app1/features/home/presentation/widgets/filter_button.dart';
-import 'package:servicely_app1/features/home/presentation/widgets/city_dropdown.dart';
-import 'package:servicely_app1/features/home/presentation/widgets/home_search_bar.dart';
-import 'package:servicely_app1/features/home/presentation/widgets/service_card.dart';
+import 'package:servicely_app1/core/theme/app_theme.dart';
+import 'package:servicely_app1/features/home/presentation/views/home_content_screen.dart';
+import 'package:servicely_app1/features/orders/presentation/views/orders_screen.dart';
+import 'package:servicely_app1/features/profile/presentation/views/profile_screen.dart';
+import 'package:servicely_app1/features/more/presentation/views/more_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -14,125 +13,115 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  TextEditingController searchController = TextEditingController();
+  int selectedNavIndex = 0;
 
-  List<Map<String, String>> services = [
-    {'name': 'تنظيف منزل', 'category': 'نظافة'},
-    {'name': 'سباكة', 'category': 'سباكة'},
-    {'name': 'تصليح كهرباء', 'category': 'كهرباء'},
-    {'name': 'غسيل سيارات', 'category': 'سيارات'},
-    {'name': 'إصلاح مكيفات', 'category': 'أجهزة'},
-    {'name': 'تنظيف سجاد', 'category': 'نظافة'},
-  ];
-
-  List<String> filteredServices = [];
-
-  final List<String> categories = [
-    "نظافة",
-    "سباكة",
-    "موضة وأزياء",
-    "أجهزة",
-    "كهرباء",
-    "سيارات"
-  ];
-
-  int selectedCategoryIndex = 0;
+  // List of screens for navigation
+  late final List<Widget> _screens;
 
   @override
   void initState() {
     super.initState();
-    searchService('');
+    _screens = [
+      const HomeContentScreen(), // الرئيسية
+      const OrdersView(), // طلباتى
+      const ProfileScreen(), // الملف الشخصى
+      const MoreScreen(), // المزيد
+    ];
   }
 
-  void updateCategory(int index) {
-    setState(() {
-      selectedCategoryIndex = index;
-    });
-    searchService(searchController.text);
+  Widget _buildNavItem(int index, Object iconOrAsset, String label) {
+    final selected = selectedNavIndex == index;
+
+    return Expanded(
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          borderRadius: BorderRadius.circular(12),
+          onTap: () => setState(() => selectedNavIndex = index),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 4),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                iconOrAsset is IconData
+                    ? Icon(
+                        iconOrAsset,
+                        size: 24,
+                        color:
+                            selected ? primaryColorHex : Colors.grey.shade600,
+                      )
+                    : Image.asset(
+                        iconOrAsset as String,
+                        width: 24,
+                        height: 24,
+                      ),
+                const SizedBox(height: 2),
+                Text(
+                  label,
+                  style: TextStyle(
+                    fontSize: 10,
+                    color: selected ? primaryColorHex : Colors.grey.shade600,
+                    fontWeight: selected ? FontWeight.w600 : FontWeight.normal,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 
-  void searchService(String query) {
-    final category = categories[selectedCategoryIndex];
-    final results = services
-        .where((service) {
-          return service['category'] == category &&
-              service['name']!.toLowerCase().contains(query.toLowerCase());
-        })
-        .map((e) => e['name']!)
-        .toList();
-
-    setState(() {
-      filteredServices = results;
-    });
+  Widget _buildBottomNavBar() {
+    return BottomAppBar(
+      elevation: 8,
+      color: Colors.white,
+      shape: const CircularNotchedRectangle(),
+      notchMargin: 8,
+      child: SizedBox(
+        height: 70,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Row(
+            children: [
+              _buildNavItem(3, "assets/images/menu_12328741 1.png", 'المزيد'),
+              _buildNavItem(2, "assets/images/profile.png", 'الملف الشخصى'),
+              const SizedBox(width: 64),
+              _buildNavItem(1, "assets/images/Group.png", 'طلباتى'),
+              _buildNavItem(0, Icons.home, 'الرئيسية'),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: categories.length,
-      child: Scaffold(
-        backgroundColor: const Color(0xffF6F7FB),
-        body: SafeArea(
-          child: Column(
-            children: [
-              /// HEADER + SEARCH
-              Stack(
-                clipBehavior: Clip.none,
-                children: [
-                  const HomeHeaderSection(),
-                  Positioned(
-                    bottom: -25,
-                    left: 16,
-                    right: 16,
-                    child: HomeSearchBar(
-                      controller: searchController,
-                      onChanged: searchService,
-                    ),
-                  )
-                ],
-              ),
-
-              const SizedBox(height: 60),
-
-              /// CATEGORIES
-              CategoriesTabBar(
-                categories: categories,
-                onTap: updateCategory,
-              ),
-
-              const SizedBox(height: 10),
-
-              /// FILTER ROW
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: Row(
-                  children: [
-                    FilterButton(
-                      onTap: () {},
-                    ),
-                    const SizedBox(width: 10),
-                    const CityDropdown(),
-                  ],
-                ),
-              ),
-
-              const SizedBox(height: 10),
-
-              /// SERVICES
-              Expanded(
-                child: ListView.builder(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  itemCount: filteredServices.length,
-                  itemBuilder: (context, index) {
-                    return ServiceCard(
-                      serviceName: filteredServices[index],
-                    );
-                  },
-                ),
-              ),
-            ],
+    return Scaffold(
+      backgroundColor: const Color(0xffF6F7FB),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          print('Add button pressed');
+        },
+        backgroundColor: primaryColorHex, // Button background color
+        foregroundColor: Colors.white, // Icon color
+        elevation: 6,
+        highlightElevation: 12,
+        child: Container(
+          decoration: BoxDecoration(
+            border: Border.all(color: Colors.white, width: 1),
+            borderRadius: BorderRadius.circular(8),
           ),
+          child: const Icon(Icons.add, size: 28),
         ),
+      ),
+      bottomNavigationBar: _buildBottomNavBar(),
+      body: IndexedStack(
+        index: selectedNavIndex,
+        children: _screens,
       ),
     );
   }

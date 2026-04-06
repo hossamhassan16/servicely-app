@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:servicely_app1/features/home/presentation/widgets/service_action_row.dart';
+import 'package:servicely_app1/features/home/presentation/views/service_detail_screen.dart';
 import 'service_card_footer.dart';
 
 class ServiceCard extends StatelessWidget {
@@ -23,12 +23,7 @@ class ServiceCard extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: const BorderRadius.vertical(top: Radius.circular(14)),
-            child: SvgPicture.asset(
-              "assets/images/Rectangle 1137.svg",
-              width: double.infinity,
-              height: 120,
-              fit: BoxFit.cover,
-            ),
+            child: Image.asset("assets/images/box.png"),
           ),
           const SizedBox(height: 10),
           Padding(
@@ -65,7 +60,24 @@ class ServiceCard extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 12),
             child: ServiceActionsRow(
-              onDetails: () {},
+              onDetails: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ServiceDetailScreen(
+                      serviceName: serviceName,
+                      serviceType: "نوع الخدمة",
+                      location: "الرياض , الدرعية",
+                      date: "7 نوفمبر 2025",
+                      description:
+                          "يوفر هذا التطبيق خدمات متخصصة في رعاية الحيوانات الأليفة، حيث نقدم خدمات شاملة تشمل العناية البيطرية والتنظيف والتدريب. فريقنا من الخبراء مؤهل بشكل احترافي وملتزم بتقديم أفضل رعاية لحيواناتك الأليفة.",
+                      providerName: "محمد عبد الله",
+                      providerRating: "170",
+                      providerImage: "assets/images/profile.png",
+                    ),
+                  ),
+                );
+              },
             ),
           ),
           const SizedBox(height: 12),
