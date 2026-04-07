@@ -21,8 +21,8 @@ class OrdersFilterSection extends StatelessWidget {
   ];
   final List<String> statusList2 = const [
     "طلبات ملغية",
-    "طلبات مكتملة",
     "طلبات جارية",
+    "طلبات مكتملة",
   ];
 
   @override

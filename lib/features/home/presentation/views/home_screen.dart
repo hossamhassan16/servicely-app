@@ -38,35 +38,32 @@ class _HomeScreenState extends State<HomeScreen> {
         child: InkWell(
           borderRadius: BorderRadius.circular(12),
           onTap: () => setState(() => selectedNavIndex = index),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 4),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                iconOrAsset is IconData
-                    ? Icon(
-                        iconOrAsset,
-                        size: 24,
-                        color:
-                            selected ? primaryColorHex : Colors.grey.shade600,
-                      )
-                    : Image.asset(
-                        iconOrAsset as String,
-                        width: 24,
-                        height: 24,
-                      ),
-                const SizedBox(height: 2),
-                Text(
-                  label,
-                  style: TextStyle(
-                    fontSize: 10,
-                    color: selected ? primaryColorHex : Colors.grey.shade600,
-                    fontWeight: selected ? FontWeight.w600 : FontWeight.normal,
-                  ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              iconOrAsset is IconData
+                  ? Icon(
+                      iconOrAsset,
+                      size: 24,
+                      color: selected ? primaryColorHex : Colors.grey.shade600,
+                    )
+                  : Image.asset(
+                      iconOrAsset as String,
+                      width: 24,
+                      height: 24,
+                    ),
+              const SizedBox(height: 2),
+              Text(
+                label,
+                textDirection: TextDirection.rtl,
+                style: TextStyle(
+                  fontSize: 10,
+                  color: selected ? primaryColorHex : Colors.grey.shade600,
+                  fontWeight: selected ? FontWeight.w600 : FontWeight.normal,
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
@@ -75,6 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget _buildBottomNavBar() {
     return BottomAppBar(
+      height: 85,
       elevation: 8,
       color: Colors.white,
       shape: const CircularNotchedRectangle(),
@@ -86,7 +84,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Row(
             children: [
               _buildNavItem(3, "assets/images/menu_12328741 1.png", 'المزيد'),
-              _buildNavItem(2, "assets/images/profile.png", 'الملف الشخصى'),
+              _buildNavItem(2, "assets/images/profile.png", 'البروفايل'),
               const SizedBox(width: 64),
               _buildNavItem(1, "assets/images/Group.png", 'طلباتى'),
               _buildNavItem(0, Icons.home, 'الرئيسية'),

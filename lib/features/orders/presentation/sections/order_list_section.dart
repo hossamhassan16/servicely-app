@@ -100,6 +100,7 @@ class OrdersListSection extends StatelessWidget {
           status: order.status,
           statusColor: order.statusColor,
           onTap: () {},
+          order: order,
         );
       },
     );

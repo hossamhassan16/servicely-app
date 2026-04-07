@@ -19,7 +19,7 @@ class StatusChip extends StatelessWidget {
       onTap: onTap,
       child: Container(
         height: 48,
-        padding: const EdgeInsets.symmetric(horizontal: 12),
+        padding: const EdgeInsets.symmetric(horizontal: 8),
         decoration: BoxDecoration(
           color: isSelected ? const Color(0xff2D6CDF) : Colors.grey.shade200,
           borderRadius: BorderRadius.circular(10),
@@ -41,7 +41,7 @@ class StatusChip extends StatelessWidget {
               title,
               style: TextStyle(
                 color: isSelected ? Colors.white : Colors.black,
-                fontSize: 13,
+                fontSize: 10,
                 fontWeight: FontWeight.w500,
               ),
             ),

@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class UserAvatarName extends StatelessWidget {
-  const UserAvatarName({super.key});
+  final Color textColor;
+  const UserAvatarName({super.key, required this.textColor});
 
   @override
   Widget build(BuildContext context) {
@@ -17,13 +18,13 @@ class UserAvatarName extends StatelessWidget {
               SizedBox(
                 height: 38,
               ),
-              const Text(
+              Text(
                 'محمود عبد الله',
                 style: TextStyle(
                     decoration: TextDecoration.none,
                     fontSize: 14,
                     fontWeight: FontWeight.w400,
-                    color: Colors.white),
+                    color: textColor),
               ),
               SvgPicture.asset(
                 "assets/images/Servicely Logo Horizontal 2.svg",

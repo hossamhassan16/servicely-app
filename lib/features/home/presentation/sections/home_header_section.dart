@@ -26,7 +26,7 @@ class HomeHeaderSection extends StatelessWidget {
           const SizedBox(width: 10),
           ChatBadgeIcon(),
           Spacer(),
-          UserAvatarName(),
+          UserAvatarName(textColor: Colors.white),
         ],
       ),
     );
