@@ -21,13 +21,11 @@ class BottomActionSection extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
         ),
         padding: const EdgeInsets.symmetric(horizontal: 16),
-        // مررنا الـ context هنا للدالة
         child: _buildButtons(context),
       ),
     );
   }
 
-  // أضفنا (BuildContext context) هنا
   Widget _buildButtons(BuildContext context) {
     if (status == "قيد التنفيذ") {
       return ActionButton(
