@@ -11,16 +11,15 @@ class CustomTextField extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16.0),
       child: TextField(
-        textAlign: TextAlign.right, // Aligns text to the right
-        textDirection: TextDirection.rtl, // Sets RTL behavior
-        maxLines: 5, // Allows for a taller box like the one in the image
+        textAlign: TextAlign.right,
+        textDirection: TextDirection.rtl,
+        maxLines: 5,
         decoration: InputDecoration(
           hintText: 'تقييم الخدمة',
           hintStyle: TextStyle(
             color: secondaryColorHex,
             fontSize: 16,
           ),
-          // The border when the field is NOT focused
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12.0),
             borderSide: BorderSide(
@@ -28,7 +27,6 @@ class CustomTextField extends StatelessWidget {
               width: 1.0,
             ),
           ),
-          // The border when the user clicks on the field
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12.0),
             borderSide: BorderSide(
