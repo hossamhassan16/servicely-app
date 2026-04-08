@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:servicely_app1/core/theme/app_theme.dart';
+import 'package:servicely_app1/gen/assets.gen.dart';
 
 class ReportSection extends StatefulWidget {
   final BuildContext parentContext;
@@ -40,8 +41,7 @@ class _ReportSectionState extends State<ReportSection> {
       SnackBar(
         content: Column(
           children: [
-            Image.asset(
-              "assets/images/report.png",
+            Assets.images.report.image(
               width: 40,
               height: 40,
             ),
@@ -107,11 +107,11 @@ class _ReportSectionState extends State<ReportSection> {
                     fillColor: Colors.white,
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(color: Colors.grey.shade300),
+                      borderSide: BorderSide(color: secondaryColorHex),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
-                      borderSide: BorderSide(color: Colors.blue),
+                      borderSide: BorderSide(color: primaryColorHex),
                     ),
                     contentPadding: const EdgeInsets.symmetric(
                       horizontal: 12,

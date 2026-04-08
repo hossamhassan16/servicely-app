@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:servicely_app1/core/theme/app_theme.dart';
 import 'package:servicely_app1/features/orders/presentation/sections/order_list_section.dart';
 import 'package:servicely_app1/features/orders/presentation/views/order_details_screen.dart';
 
@@ -127,7 +128,7 @@ class OrderDetailsCard extends StatelessWidget {
                             time,
                             style: TextStyle(
                               fontSize: 12,
-                              color: Colors.grey.shade600,
+                              color: secondaryColorHex,
                             ),
                           ),
                         ],
@@ -137,7 +138,7 @@ class OrderDetailsCard extends StatelessWidget {
                       width: 1,
                       height: 48,
                       margin: const EdgeInsets.symmetric(horizontal: 12),
-                      color: Colors.grey.shade300,
+                      color: secondaryColorHex,
                     ),
                     Expanded(
                       child: Column(
@@ -155,7 +156,7 @@ class OrderDetailsCard extends StatelessWidget {
                             date,
                             style: TextStyle(
                               fontSize: 12,
-                              color: Colors.grey.shade600,
+                              color: secondaryColorHex,
                             ),
                           ),
                         ],
@@ -165,7 +166,7 @@ class OrderDetailsCard extends StatelessWidget {
                       width: 1,
                       height: 48,
                       margin: const EdgeInsets.symmetric(horizontal: 12),
-                      color: Colors.grey.shade300,
+                      color: secondaryColorHex,
                     ),
                     Expanded(
                       child: Column(
@@ -182,7 +183,7 @@ class OrderDetailsCard extends StatelessWidget {
                           Text(
                             title,
                             style: const TextStyle(
-                              color: Colors.grey,
+                              color: secondaryColorHex,
                               fontSize: 15,
                             ),
                           ),

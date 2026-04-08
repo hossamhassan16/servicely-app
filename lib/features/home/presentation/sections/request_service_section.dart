@@ -101,7 +101,7 @@ class _RequestServiceSectionState extends State<RequestServiceSection> {
                   "من: ${widget.providerName}",
                   style: TextStyle(
                     fontSize: 12,
-                    color: Colors.grey.shade600,
+                    color: secondaryColorHex,
                   ),
                 ),
               ],
@@ -112,7 +112,7 @@ class _RequestServiceSectionState extends State<RequestServiceSection> {
             "تاريخ إتمام الخدمة",
             style: TextStyle(
               fontSize: 12,
-              color: Colors.grey.shade600,
+              color: secondaryColorHex,
             ),
           ),
           const SizedBox(height: 8),
@@ -125,14 +125,14 @@ class _RequestServiceSectionState extends State<RequestServiceSection> {
               ),
               decoration: BoxDecoration(
                 color: Colors.white,
-                border: Border.all(color: Colors.grey.shade300),
+                border: Border.all(color: secondaryColorHex),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Row(
                 children: [
                   Icon(
                     Icons.calendar_today,
-                    color: Colors.grey.shade400,
+                    color: secondaryColorHex,
                     size: 20,
                   ),
                   const SizedBox(width: 12),
@@ -144,7 +144,7 @@ class _RequestServiceSectionState extends State<RequestServiceSection> {
                       style: TextStyle(
                         fontSize: 14,
                         color: _dateController.text.isEmpty
-                            ? Colors.grey.shade400
+                            ? secondaryColorHex
                             : Colors.black,
                       ),
                     ),
@@ -158,7 +158,7 @@ class _RequestServiceSectionState extends State<RequestServiceSection> {
             "الساعة",
             style: TextStyle(
               fontSize: 12,
-              color: Colors.grey.shade600,
+              color: secondaryColorHex,
             ),
           ),
           const SizedBox(height: 8),
@@ -171,14 +171,14 @@ class _RequestServiceSectionState extends State<RequestServiceSection> {
               ),
               decoration: BoxDecoration(
                 color: Colors.white,
-                border: Border.all(color: Colors.grey.shade300),
+                border: Border.all(color: secondaryColorHex),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Row(
                 children: [
                   Icon(
                     Icons.access_time,
-                    color: Colors.grey.shade400,
+                    color: secondaryColorHex,
                     size: 20,
                   ),
                   const SizedBox(width: 12),
@@ -190,14 +190,14 @@ class _RequestServiceSectionState extends State<RequestServiceSection> {
                       style: TextStyle(
                         fontSize: 14,
                         color: _timeController.text.isEmpty
-                            ? Colors.grey.shade400
+                            ? secondaryColorHex
                             : Colors.black,
                       ),
                     ),
                   ),
                   Icon(
                     Icons.arrow_drop_down,
-                    color: Colors.grey.shade400,
+                    color: secondaryColorHex,
                   ),
                 ],
               ),
@@ -208,14 +208,14 @@ class _RequestServiceSectionState extends State<RequestServiceSection> {
             "تفاصيل أخرى",
             style: TextStyle(
               fontSize: 12,
-              color: Colors.grey.shade600,
+              color: secondaryColorHex,
             ),
           ),
           const SizedBox(height: 8),
           Container(
             decoration: BoxDecoration(
               color: Colors.white,
-              border: Border.all(color: Colors.grey.shade300),
+              border: Border.all(color: secondaryColorHex),
               borderRadius: BorderRadius.circular(10),
             ),
             child: TextField(
@@ -225,7 +225,7 @@ class _RequestServiceSectionState extends State<RequestServiceSection> {
                 hintText: "أضف تفاصيلك هنا...",
                 hintStyle: TextStyle(
                   fontSize: 14,
-                  color: Colors.grey.shade400,
+                  color: secondaryColorHex,
                 ),
                 border: InputBorder.none,
                 contentPadding: const EdgeInsets.all(16),

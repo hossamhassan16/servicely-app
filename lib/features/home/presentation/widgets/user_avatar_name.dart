@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:servicely_app1/core/theme/app_theme.dart';
+import 'package:servicely_app1/gen/assets.gen.dart';
 
 class UserAvatarName extends StatelessWidget {
   final Color textColor;
@@ -27,7 +29,7 @@ class UserAvatarName extends StatelessWidget {
                     color: textColor),
               ),
               SvgPicture.asset(
-                "assets/images/Servicely Logo Horizontal 2.svg",
+                Assets.images.servicelyLogoHorizontal2,
                 height: 45,
                 width: 45,
               )
@@ -36,7 +38,7 @@ class UserAvatarName extends StatelessWidget {
           const SizedBox(width: 8),
           CircleAvatar(
             radius: 20,
-            backgroundColor: Colors.grey[300],
+            backgroundColor: secondaryColorHex,
             child: const Icon(Icons.person, color: Colors.white),
           ),
         ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:servicely_app1/core/theme/app_theme.dart';
 
 class NameInputField extends StatelessWidget {
   final String hintText;
@@ -17,7 +18,7 @@ class NameInputField extends StatelessWidget {
       decoration: InputDecoration(
         hintTextDirection: TextDirection.rtl,
         hintText: hintText,
-        hintStyle: TextStyle(color: Color(0xff818181)),
+        hintStyle: TextStyle(color: secondaryColorHex),
         suffixIcon: const Icon(
           Icons.person,
           color: Color(0xffC5C5C5),
@@ -26,7 +27,7 @@ class NameInputField extends StatelessWidget {
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(12),
           borderSide: const BorderSide(
-            color: Color(0xff818181),
+            color: secondaryColorHex,
             width: 1.5,
           ),
         ),

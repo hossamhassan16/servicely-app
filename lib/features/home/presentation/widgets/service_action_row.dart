@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:servicely_app1/core/theme/app_theme.dart';
+import 'package:servicely_app1/gen/assets.gen.dart';
 
 class ServiceActionsRow extends StatelessWidget {
   final VoidCallback onDetails;
@@ -18,8 +20,8 @@ class ServiceActionsRow extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
           ),
           child: SvgPicture.asset(
-            "assets/images/chat_3114553.svg",
-            color: Colors.grey,
+            Assets.images.chat3114553,
+            color: secondaryColorHex,
           ),
         ),
         const SizedBox(width: 10),

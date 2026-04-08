@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:servicely_app1/gen/assets.gen.dart';
 
 class NotificationBadgeIcon extends StatelessWidget {
   const NotificationBadgeIcon({super.key});
@@ -25,7 +26,7 @@ class NotificationBadgeIcon extends StatelessWidget {
               ),
               child: Padding(
                 padding: const EdgeInsets.all(6),
-                child: SvgPicture.asset("assets/images/not icon.svg"),
+                child: SvgPicture.asset(Assets.images.notIcon),
               ),
             ),
             Positioned(

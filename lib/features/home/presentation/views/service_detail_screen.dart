@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:servicely_app1/core/routing/router_names.dart';
 import 'package:servicely_app1/core/theme/app_theme.dart';
 import 'package:servicely_app1/features/home/presentation/views/report_modal_bottom_sheet.dart';
+import 'package:servicely_app1/gen/assets.gen.dart';
 
 class ServiceDetailScreen extends StatefulWidget {
   final String serviceName;
@@ -83,9 +84,9 @@ class _ServiceDetailScreenState extends State<ServiceDetailScreen> {
                         setState(() => _currentImageIndex = index);
                       },
                       children: [
-                        Image.asset("assets/images/box.png", fit: BoxFit.cover),
-                        Image.asset("assets/images/box.png", fit: BoxFit.cover),
-                        Image.asset("assets/images/box.png", fit: BoxFit.cover),
+                        Assets.images.box.image(fit: BoxFit.cover),
+                        Assets.images.box.image(fit: BoxFit.cover),
+                        Assets.images.box.image(fit: BoxFit.cover),
                       ],
                     ),
                   ),
@@ -101,7 +102,7 @@ class _ServiceDetailScreenState extends State<ServiceDetailScreen> {
                         margin: const EdgeInsets.symmetric(horizontal: 4),
                         decoration: BoxDecoration(
                           color: _currentImageIndex == index
-                              ? secondaryColor
+                              ? secondaryColorHex
                               : Colors.grey.shade300,
                           borderRadius: BorderRadius.circular(4),
                         ),
@@ -128,7 +129,7 @@ class _ServiceDetailScreenState extends State<ServiceDetailScreen> {
                         widget.serviceType,
                         style: TextStyle(
                           fontSize: 12,
-                          color: Colors.grey.shade600,
+                          color: secondaryColorHex,
                         ),
                       ),
                       Text(
@@ -149,7 +150,7 @@ class _ServiceDetailScreenState extends State<ServiceDetailScreen> {
                           vertical: 4,
                         ),
                         decoration: BoxDecoration(
-                          color: secondaryColor.withOpacity(0.1),
+                          color: secondaryColorHex.withOpacity(0.1),
                           borderRadius: BorderRadius.circular(4),
                         ),
                         child: Row(
@@ -157,14 +158,14 @@ class _ServiceDetailScreenState extends State<ServiceDetailScreen> {
                             Icon(
                               Icons.calendar_today,
                               size: 12,
-                              color: secondaryColor,
+                              color: secondaryColorHex,
                             ),
                             const SizedBox(width: 4),
                             Text(
                               widget.date,
                               style: TextStyle(
                                 fontSize: 11,
-                                color: secondaryColor,
+                                color: secondaryColorHex,
                               ),
                             ),
                           ],
@@ -185,14 +186,14 @@ class _ServiceDetailScreenState extends State<ServiceDetailScreen> {
                             Icon(
                               Icons.location_on,
                               size: 12,
-                              color: Colors.grey.shade600,
+                              color: secondaryColorHex,
                             ),
                             const SizedBox(width: 4),
                             Text(
                               widget.location,
                               style: TextStyle(
                                 fontSize: 11,
-                                color: Colors.grey.shade600,
+                                color: secondaryColorHex,
                               ),
                             ),
                           ],
@@ -214,7 +215,7 @@ class _ServiceDetailScreenState extends State<ServiceDetailScreen> {
                     widget.description,
                     style: TextStyle(
                       fontSize: 13,
-                      color: Colors.grey.shade700,
+                      color: secondaryColorHex,
                       height: 1.5,
                     ),
                   ),
@@ -234,7 +235,7 @@ class _ServiceDetailScreenState extends State<ServiceDetailScreen> {
                     height: 50,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
-                      border: Border.all(color: secondaryColor, width: 2),
+                      border: Border.all(color: secondaryColorHex, width: 2),
                     ),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(50),
@@ -270,7 +271,7 @@ class _ServiceDetailScreenState extends State<ServiceDetailScreen> {
                               widget.providerRating,
                               style: TextStyle(
                                 fontSize: 12,
-                                color: Colors.grey.shade600,
+                                color: secondaryColorHex,
                               ),
                             ),
                           ],
@@ -288,7 +289,7 @@ class _ServiceDetailScreenState extends State<ServiceDetailScreen> {
                     ),
                     child: Icon(
                       Icons.chat_bubble_outline,
-                      color: secondaryColor,
+                      color: secondaryColorHex,
                       size: 20,
                     ),
                   ),

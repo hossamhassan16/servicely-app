@@ -13,7 +13,7 @@ class HomeHeaderSection extends StatelessWidget {
       width: double.infinity,
       height: 150,
       decoration: const BoxDecoration(
-        color: secondaryColor,
+        color: secondaryColorHex,
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(10),
           bottomRight: Radius.circular(10),

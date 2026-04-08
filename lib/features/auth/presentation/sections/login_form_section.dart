@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:servicely_app1/core/routing/router_names.dart';
+import 'package:servicely_app1/core/theme/app_theme.dart';
 import 'package:servicely_app1/features/auth/presentation/widgets/outlined_register_button.dart';
 import 'package:servicely_app1/features/auth/presentation/widgets/phone_input_field.dart';
 import 'package:servicely_app1/features/auth/presentation/widgets/primary_button.dart';
@@ -39,19 +40,19 @@ class _LoginFormSectionState extends State<LoginFormSection> {
               const SizedBox(height: 32),
               PrimaryButton(
                 text: 'تسجيل الدخول',
-                color: const Color(0xff0271F7),
+                color: primaryColorHex,
                 textColor: Colors.white,
                 onPressed: _login,
               ),
               const SizedBox(height: 220),
               const Text(
                 'ليس لديك حساب؟ ',
-                style: TextStyle(color: Color(0xFF818181)),
+                style: TextStyle(color: secondaryColorHex),
               ),
               const SizedBox(height: 16),
               const OutlinedRegisterButton(
-                borderColor: Color(0xFF818181),
-                textColor: Color(0xFF818181),
+                borderColor: secondaryColorHex,
+                textColor: secondaryColorHex,
               ),
             ],
           ),

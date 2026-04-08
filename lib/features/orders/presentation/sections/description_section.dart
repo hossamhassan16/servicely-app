@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:servicely_app1/core/theme/app_theme.dart';
 import 'package:servicely_app1/features/orders/presentation/sections/order_list_section.dart';
 
 class DescriptionSection extends StatelessWidget {
@@ -20,7 +21,7 @@ class DescriptionSection extends StatelessWidget {
         Text(
           textDirection: TextDirection.rtl,
           "ومن هنا وجب على المصمم أن يضع نصوصا مؤقتة على التصميم ليظهر للعميل الشكل كاملاً،دور مولد النصر عالمصمم عناء البحث عن نص لبحث ع ومن هنا وجب على المصمم أن يضع نصوصا مؤقتة على التصميم ليظهر للعميل الشكل كاملاً،دور مولد النصر عالمصمم عناء البحث عن نص لبحث",
-          style: TextStyle(color: Colors.grey, fontSize: 12, height: 1.5),
+          style: TextStyle(color: secondaryColorHex, fontSize: 12, height: 1.5),
         )
       ],
     );

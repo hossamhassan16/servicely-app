@@ -122,7 +122,7 @@ class _CityDropdownState extends State<CityDropdown> {
           height: 45,
           padding: const EdgeInsets.symmetric(horizontal: 12),
           decoration: BoxDecoration(
-            border: Border.all(color: Colors.grey.shade300),
+            border: Border.all(color: secondaryColorHex),
             borderRadius: BorderRadius.circular(10),
             color: Colors.white,
           ),

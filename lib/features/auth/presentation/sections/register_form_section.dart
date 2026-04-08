@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:servicely_app1/core/routing/router_names.dart';
+import 'package:servicely_app1/core/theme/app_theme.dart';
 import 'package:servicely_app1/features/auth/presentation/widgets/app_text_field.dart';
 import 'package:servicely_app1/features/auth/presentation/widgets/phone_input_field.dart';
 import 'package:servicely_app1/features/auth/presentation/widgets/primary_button.dart';
+import 'package:servicely_app1/gen/assets.gen.dart';
 
 class RegisterFormSection extends StatefulWidget {
   const RegisterFormSection({super.key});
@@ -42,7 +44,7 @@ class _RegisterFormSectionState extends State<RegisterFormSection> {
                   height: 98,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    border: Border.all(color: const Color(0xff818181)),
+                    border: Border.all(color: secondaryColorHex),
                   ),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -50,10 +52,10 @@ class _RegisterFormSectionState extends State<RegisterFormSection> {
                       const Text(
                         "الصورة الشخصية",
                         style:
-                            TextStyle(color: Color(0xff818181), fontSize: 14),
+                            TextStyle(color: secondaryColorHex, fontSize: 14),
                       ),
                       SvgPicture.asset(
-                        "assets/images/image-icon.svg",
+                        Assets.images.imageIcon,
                         width: 15,
                         height: 15,
                       )
@@ -74,7 +76,7 @@ class _RegisterFormSectionState extends State<RegisterFormSection> {
                   children: [
                     const Text(
                       "هل أنت موافق على الشروط والأحكام ؟",
-                      style: TextStyle(color: Colors.grey),
+                      style: TextStyle(color: secondaryColorHex),
                     ),
                     Checkbox(
                       value: isAccepted,
@@ -86,7 +88,7 @@ class _RegisterFormSectionState extends State<RegisterFormSection> {
                       },
                       shape: const CircleBorder(
                         side: BorderSide(
-                          color: Color(0xff818181),
+                          color: secondaryColorHex,
                         ),
                       ),
                     ),
@@ -95,7 +97,7 @@ class _RegisterFormSectionState extends State<RegisterFormSection> {
                 const SizedBox(height: 18),
                 PrimaryButton(
                   text: 'إنشاء',
-                  color: const Color(0xff0271F7),
+                  color: primaryColorHex,
                   textColor: Colors.white,
                   onPressed: _register,
                 ),

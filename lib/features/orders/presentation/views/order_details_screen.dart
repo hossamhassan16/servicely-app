@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:servicely_app1/core/theme/app_theme.dart';
 import 'package:servicely_app1/features/orders/presentation/sections/bottom_action_section.dart';
 import 'package:servicely_app1/features/orders/presentation/sections/description_section.dart';
 import 'package:servicely_app1/features/orders/presentation/sections/images_section.dart';
@@ -57,7 +58,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
               const SizedBox(height: 8),
               const Text(
                 'ما هو تقييمك العام للخدمة؟',
-                style: TextStyle(color: Color(0xFF818181)),
+                style: TextStyle(color: secondaryColorHex),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 16),
@@ -109,7 +110,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                   Navigator.pop(sheetContext);
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: const Color(0xff2D6CDF),
+                  backgroundColor: primaryColorHex,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(16),
                   ),
@@ -171,7 +172,7 @@ class _OrderDetailsScreenState extends State<OrderDetailsScreen> {
                     SizedBox(height: 4),
                     Text(
                       'منذ ساعة',
-                      style: TextStyle(color: Colors.grey, fontSize: 12),
+                      style: TextStyle(color: secondaryColorHex, fontSize: 12),
                     ),
                   ],
                 ),

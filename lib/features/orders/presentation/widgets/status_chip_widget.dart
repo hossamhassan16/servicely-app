@@ -21,10 +21,11 @@ class StatusChip extends StatelessWidget {
         height: 48,
         padding: const EdgeInsets.symmetric(horizontal: 8),
         decoration: BoxDecoration(
-          color: isSelected ? const Color(0xff2D6CDF) : Colors.grey.shade200,
+          color:
+              isSelected ? primaryColorHex : Color.fromARGB(255, 222, 221, 221),
           borderRadius: BorderRadius.circular(10),
           border: Border.all(
-            color: isSelected ? primaryColorHex : Colors.grey.shade300,
+            color: isSelected ? primaryColorHex : Colors.white,
           ),
         ),
         child: Row(

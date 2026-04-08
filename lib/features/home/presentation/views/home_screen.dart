@@ -4,6 +4,7 @@ import 'package:servicely_app1/features/home/presentation/views/home_content_scr
 import 'package:servicely_app1/features/orders/presentation/views/orders_screen.dart';
 import 'package:servicely_app1/features/profile/presentation/views/profile_screen.dart';
 import 'package:servicely_app1/features/more/presentation/views/more_screen.dart';
+import 'package:servicely_app1/gen/assets.gen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -46,7 +47,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ? Icon(
                       iconOrAsset,
                       size: 24,
-                      color: selected ? primaryColorHex : Colors.grey.shade600,
+                      color: selected ? primaryColorHex : secondaryColorHex,
                     )
                   : Image.asset(
                       iconOrAsset as String,
@@ -59,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 textDirection: TextDirection.rtl,
                 style: TextStyle(
                   fontSize: 10,
-                  color: selected ? primaryColorHex : Colors.grey.shade600,
+                  color: selected ? primaryColorHex : secondaryColorHex,
                   fontWeight: selected ? FontWeight.w600 : FontWeight.normal,
                 ),
               ),
@@ -83,10 +84,10 @@ class _HomeScreenState extends State<HomeScreen> {
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Row(
             children: [
-              _buildNavItem(3, "assets/images/menu_12328741 1.png", 'المزيد'),
-              _buildNavItem(2, "assets/images/profile.png", 'البروفايل'),
+              _buildNavItem(3, Assets.images.menu123287411.path, 'المزيد'),
+              _buildNavItem(2, Assets.images.profile.path, 'البروفايل'),
               const SizedBox(width: 64),
-              _buildNavItem(1, "assets/images/Group.png", 'طلباتى'),
+              _buildNavItem(1, Assets.images.group.path, 'طلباتى'),
               _buildNavItem(0, Icons.home, 'الرئيسية'),
             ],
           ),

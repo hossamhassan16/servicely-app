@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:servicely_app1/core/theme/app_theme.dart';
 
 class PhoneInputField extends StatelessWidget {
   const PhoneInputField({
@@ -20,10 +21,10 @@ class PhoneInputField extends StatelessWidget {
       decoration: InputDecoration(
         hintTextDirection: TextDirection.rtl,
         hintText: 'رقم الجوال',
-        hintStyle: TextStyle(color: Color(0xff818181)),
+        hintStyle: TextStyle(color: secondaryColorHex),
         suffixIcon: const Icon(
           Icons.phone_in_talk,
-          color: Color(0xffC5C5C5),
+          color: secondaryColorHex,
         ),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
         enabledBorder: OutlineInputBorder(

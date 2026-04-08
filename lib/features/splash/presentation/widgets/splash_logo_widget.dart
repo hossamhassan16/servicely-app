@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:servicely_app1/gen/assets.gen.dart';
 
 class SplashLogoWidget extends StatelessWidget {
   const SplashLogoWidget({super.key});
@@ -10,14 +11,14 @@ class SplashLogoWidget extends StatelessWidget {
       children: [
         Center(
           child: SvgPicture.asset(
-            'assets/images/splash1.svg',
+            Assets.images.splash1,
             width: MediaQuery.sizeOf(context).width,
             fit: BoxFit.contain,
           ),
         ),
         Center(
           child: SvgPicture.asset(
-            'assets/images/splash2.svg',
+            Assets.images.splash2,
             width: 200,
             height: 200,
           ),

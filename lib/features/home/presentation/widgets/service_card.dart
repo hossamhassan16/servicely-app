@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:servicely_app1/features/home/presentation/widgets/service_action_row.dart';
 import 'package:servicely_app1/features/home/presentation/views/service_detail_screen.dart';
+import 'package:servicely_app1/gen/assets.gen.dart';
 import 'service_card_footer.dart';
 
 class ServiceCard extends StatelessWidget {
@@ -23,7 +24,7 @@ class ServiceCard extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: const BorderRadius.vertical(top: Radius.circular(14)),
-            child: Image.asset("assets/images/box.png"),
+            child: Assets.images.box.image(),
           ),
           const SizedBox(height: 10),
           Padding(

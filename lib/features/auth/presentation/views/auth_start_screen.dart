@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:servicely_app1/core/theme/app_theme.dart';
 import 'package:servicely_app1/features/auth/presentation/sections/auth_start_body_section.dart';
 
 class AuthStartScreen extends StatelessWidget {
@@ -6,8 +7,8 @@ class AuthStartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color(0xFF0271F7),
+    return const Scaffold(
+      backgroundColor: primaryColorHex,
       body: AuthStartBodySection(),
     );
   }

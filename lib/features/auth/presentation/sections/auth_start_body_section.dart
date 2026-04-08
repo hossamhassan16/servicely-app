@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:servicely_app1/core/routing/router_names.dart';
 import 'package:servicely_app1/features/auth/presentation/widgets/outlined_register_button.dart';
 import 'package:servicely_app1/features/auth/presentation/widgets/primary_button.dart';
+import 'package:servicely_app1/gen/assets.gen.dart';
 
 class AuthStartBodySection extends StatelessWidget {
   const AuthStartBodySection({super.key});
@@ -20,8 +21,7 @@ class AuthStartBodySection extends StatelessWidget {
         children: [
           Spacer(),
           Center(
-              child: SvgPicture.asset(
-                  "assets/images/Servicely Logo Horizontal 2.svg")),
+              child: SvgPicture.asset(Assets.images.servicelyLogoHorizontal2)),
           Spacer(),
           const Text(
             "مرحبــــــــــآ بك",

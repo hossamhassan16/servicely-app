@@ -2,6 +2,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:servicely_app1/core/routing/router_names.dart';
+import 'package:servicely_app1/core/theme/app_theme.dart';
 import 'package:servicely_app1/features/auth/presentation/widgets/otp_input_row.dart';
 import 'package:servicely_app1/features/auth/presentation/widgets/primary_button.dart';
 
@@ -60,7 +61,7 @@ class _OtpFormSectionState extends State<OtpFormSection> {
             PrimaryButton(
               text: "تحقق",
               onPressed: _verifyOtp,
-              color: const Color(0xFF0271F7),
+              color: primaryColorHex,
               textColor: const Color(0xFFFFFFFF),
             ),
             const SizedBox(height: 16),
@@ -84,7 +85,7 @@ class _OtpFormSectionState extends State<OtpFormSection> {
                 Text(
                   textDirection: TextDirection.rtl,
                   "لم يتم إرسال الكود  ؟ ",
-                  style: const TextStyle(color: Color(0xFF818181)),
+                  style: const TextStyle(color: secondaryColorHex),
                 ),
               ],
             )

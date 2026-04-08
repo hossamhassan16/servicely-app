@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:servicely_app1/core/theme/app_theme.dart';
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
@@ -16,7 +17,7 @@ class CustomTextField extends StatelessWidget {
         decoration: InputDecoration(
           hintText: 'تقييم الخدمة',
           hintStyle: TextStyle(
-            color: Colors.grey[600],
+            color: secondaryColorHex,
             fontSize: 16,
           ),
           // The border when the field is NOT focused
@@ -31,7 +32,7 @@ class CustomTextField extends StatelessWidget {
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12.0),
             borderSide: BorderSide(
-              color: Colors.grey.shade400,
+              color: secondaryColorHex,
               width: 1.5,
             ),
           ),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:servicely_app1/core/theme/app_theme.dart';
 import 'package:servicely_app1/features/orders/presentation/sections/order_list_section.dart';
+import 'package:servicely_app1/gen/assets.gen.dart';
 
 class InfoSection extends StatelessWidget {
   final OrderItem order;
@@ -33,12 +35,12 @@ class InfoSection extends StatelessWidget {
                   ),
                   Text(
                     ":     تاريخ استلام الخدمة",
-                    style: TextStyle(color: Color(0xFF818181)),
+                    style: TextStyle(color: secondaryColorHex),
                   ),
                   SizedBox(
                     width: 2,
                   ),
-                  Image.asset("assets/images/date.png")
+                  Assets.images.date.image(),
                 ],
               ),
               SizedBox(
@@ -59,12 +61,12 @@ class InfoSection extends StatelessWidget {
                   ),
                   Text(
                     ":     وقت استلام الخدمة",
-                    style: TextStyle(color: Color(0xFF818181)),
+                    style: TextStyle(color: secondaryColorHex),
                   ),
                   SizedBox(
                     width: 2,
                   ),
-                  Image.asset("assets/images/date.png"),
+                  Assets.images.date.image(),
                 ],
               ),
               SizedBox(
@@ -73,7 +75,7 @@ class InfoSection extends StatelessWidget {
               Text(
                 textDirection: TextDirection.rtl,
                 "ومن هنا وجب على المصمم أن يضع نصوصا مؤقتة على التصميم ليظهر للعميل الشكل كاملاً،دور مولد النصر عالمصمم عناء البحث عن نص لبحث ع ومن هنا وجب على المصمم أن يضع نصوصا مؤقتة على التصميم ليظهر للعميل الشكل كاملاً،دور مولد النصر عالمصمم عناء البحث عن نص لبحث",
-                style: TextStyle(color: Color(0xFF818181), fontSize: 12),
+                style: TextStyle(color: secondaryColorHex, fontSize: 12),
               )
             ],
           ),

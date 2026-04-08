@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:servicely_app1/core/theme/app_theme.dart';
+import 'package:servicely_app1/gen/assets.gen.dart';
 
 class ProviderSection extends StatelessWidget {
   const ProviderSection({super.key});
@@ -17,7 +19,7 @@ class ProviderSection extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Image.asset("assets/images/provider-chat.png"),
+              child: Assets.images.providerChat.image(),
             ),
             Spacer(),
             Column(
@@ -26,17 +28,13 @@ class ProviderSection extends StatelessWidget {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Image.asset(
-                      "assets/images/stars.png",
-                      width: 54,
-                      height: 11,
-                    ),
+                    Assets.images.stars.image(width: 54, height: 11),
                     const Text("محمود عبد الله"),
                   ],
                 ),
                 Text(
                   "170",
-                  style: TextStyle(color: Color(0xff18B791)),
+                  style: TextStyle(color: secondaryColorHex),
                 )
               ],
             ),
@@ -45,7 +43,7 @@ class ProviderSection extends StatelessWidget {
               width: 40,
               height: 40,
               decoration: BoxDecoration(
-                color: Colors.grey[300],
+                color: secondaryColorHex,
                 borderRadius: BorderRadius.all(Radius.circular(8)),
               ),
               child: const Icon(Icons.person, color: Colors.white),

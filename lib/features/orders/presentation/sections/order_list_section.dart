@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:servicely_app1/core/theme/app_theme.dart';
 import 'package:servicely_app1/features/orders/presentation/widgets/order_card_widget.dart';
 
 class OrdersListSection extends StatelessWidget {
@@ -17,7 +18,7 @@ class OrdersListSection extends StatelessWidget {
           date: '24 نوفمبر 2025',
           time: '2:40 PM',
           status: 'قيد التنفيذ',
-          statusColor: Color(0xff2D6CDF),
+          statusColor: primaryColorHex,
           mainStatus: 'طلباتي',
           subStatus: 'طلبات جارية',
         ),
@@ -80,7 +81,7 @@ class OrdersListSection extends StatelessWidget {
         child: Text(
           'لا توجد طلبات لعرضها',
           style: TextStyle(
-            color: Colors.grey.shade700,
+            color: secondaryColorHex,
             fontSize: 16,
           ),
         ),

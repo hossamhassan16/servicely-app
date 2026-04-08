@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:servicely_app1/gen/assets.gen.dart';
 
 class ChatBadgeIcon extends StatelessWidget {
   const ChatBadgeIcon({super.key});
@@ -20,7 +21,7 @@ class ChatBadgeIcon extends StatelessWidget {
       ),
       child: Padding(
         padding: const EdgeInsets.all(6),
-        child: SvgPicture.asset("assets/images/chat-icon.svg"),
+        child: SvgPicture.asset(Assets.images.chatIcon),
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:servicely_app1/core/theme/app_theme.dart';
 
 class AuthBodyCurveContainer extends StatelessWidget {
   final Widget child;
@@ -11,7 +12,7 @@ class AuthBodyCurveContainer extends StatelessWidget {
       child: Container(
         height: 300,
         width: double.infinity,
-        color: Color(0xff0271F7),
+        color: primaryColorHex,
         child: child,
       ),
     );
