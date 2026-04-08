@@ -197,7 +197,8 @@ class OrderDetailsCard extends StatelessWidget {
                         color: const Color.fromARGB(255, 53, 71, 112),
                         borderRadius: BorderRadius.circular(12),
                       ),
-                      child: const Icon(Icons.inventory_2, color: Colors.blue),
+                      child:
+                          const Icon(Icons.inventory_2, color: primaryColorHex),
                     ),
                   ],
                 ),

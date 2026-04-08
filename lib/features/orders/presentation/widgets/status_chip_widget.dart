@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:servicely_app1/core/theme/app_theme.dart';
+import 'package:servicely_app1/gen/assets.gen.dart';
 
 class StatusChip extends StatelessWidget {
   final String title;
@@ -32,10 +33,10 @@ class StatusChip extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              "assets/images/broken.png",
+              Assets.images.broken.path,
               width: 20,
               height: 20,
-              color: isSelected ? Colors.white : Colors.grey,
+              color: isSelected ? Colors.white : secondaryColorHex,
             ),
             const SizedBox(width: 6),
             Text(
