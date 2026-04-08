@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:servicely_app1/core/routing/router_names.dart';
 import 'package:servicely_app1/core/theme/app_theme.dart';
 import 'package:servicely_app1/features/home/presentation/views/report_modal_bottom_sheet.dart';
-import 'package:servicely_app1/gen/assets.gen.dart';
+import 'package:servicely_app1/core/utils/assets.gen.dart';
 
 class ServiceDetailScreen extends StatefulWidget {
   final String serviceName;

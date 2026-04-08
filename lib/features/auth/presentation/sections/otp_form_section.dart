@@ -16,11 +16,32 @@ class OtpFormSection extends StatefulWidget {
 class _OtpFormSectionState extends State<OtpFormSection> {
   late String _generatedOtp;
   final TextEditingController _otpController = TextEditingController();
+  late List<TextEditingController> _otpInputControllers;
+  late List<FocusNode> _otpFocusNodes;
 
   @override
   void initState() {
     super.initState();
     _generateOtp();
+    _initializeOtpControllers();
+  }
+
+  void _initializeOtpControllers() {
+    _otpInputControllers = List.generate(4, (index) => TextEditingController());
+    _otpFocusNodes = List.generate(4, (index) => FocusNode());
+    for (int i = 0; i < 4; i++) {
+      _otpInputControllers[i].addListener(() {
+        if (_otpInputControllers[i].text.length == 1 && i < 3) {
+          _otpFocusNodes[i + 1].requestFocus();
+        }
+        _updateMainController();
+      });
+    }
+  }
+
+  void _updateMainController() {
+    String otp = _otpInputControllers.map((c) => c.text).join();
+    _otpController.text = otp;
   }
 
   void _generateOtp() {
@@ -35,11 +56,22 @@ class _OtpFormSectionState extends State<OtpFormSection> {
         RouterNames.homeScreen,
       );
     } else {
-      // OTP is incorrect
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Invalid OTP. Please try again.')),
       );
     }
+  }
+
+  @override
+  void dispose() {
+    for (var controller in _otpInputControllers) {
+      controller.dispose();
+    }
+    for (var node in _otpFocusNodes) {
+      node.dispose();
+    }
+    _otpController.dispose();
+    super.dispose();
   }
 
   @override
@@ -56,13 +88,16 @@ class _OtpFormSectionState extends State<OtpFormSection> {
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 16),
-            OtpInputRow(controller: _otpController),
+            OtpInputRow(
+              controllers: _otpInputControllers,
+              focusNodes: _otpFocusNodes,
+            ),
             const SizedBox(height: 32),
             PrimaryButton(
               text: "تحقق",
               onPressed: _verifyOtp,
               color: primaryColorHex,
-              textColor: const Color(0xFFFFFFFF),
+              textColor: Colors.white,
             ),
             const SizedBox(height: 16),
             Row(
@@ -73,7 +108,7 @@ class _OtpFormSectionState extends State<OtpFormSection> {
                     textDirection: TextDirection.rtl,
                     " إعادة إرسالة فى 60 ثانية",
                     style: TextStyle(
-                      color: Colors.blue,
+                      color: primaryColorHex,
                     ),
                   ),
                   onPressed: () {

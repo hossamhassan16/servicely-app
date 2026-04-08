@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:servicely_app1/core/routing/router_names.dart';
-import 'package:servicely_app1/features/auth/presentation/widgets/outlined_register_button.dart';
 import 'package:servicely_app1/features/auth/presentation/widgets/primary_button.dart';
-import 'package:servicely_app1/gen/assets.gen.dart';
+import 'package:servicely_app1/core/utils/assets.gen.dart';
 
 class AuthStartBodySection extends StatelessWidget {
   const AuthStartBodySection({super.key});
@@ -25,7 +24,6 @@ class AuthStartBodySection extends StatelessWidget {
           Spacer(),
           const Text(
             "مرحبــــــــــآ بك",
-            // textAlign: TextAlign.center,
             textDirection: TextDirection.rtl,
             style: TextStyle(
                 color: Colors.white, fontSize: 18, fontWeight: FontWeight.w600),
@@ -35,7 +33,6 @@ class AuthStartBodySection extends StatelessWidget {
           ),
           const Text(
             'اختر الإجراء المناسب لتصفح التطبيق',
-            // textAlign: TextAlign.center,
             textDirection: TextDirection.rtl,
             style: TextStyle(
                 color: Colors.white, fontSize: 18, fontWeight: FontWeight.w400),
@@ -49,8 +46,11 @@ class AuthStartBodySection extends StatelessWidget {
             onPressed: () => context.go(RouterNames.login),
           ),
           const SizedBox(height: 16),
-          const OutlinedRegisterButton(
-              borderColor: Colors.white, textColor: Colors.white),
+          PrimaryButton(
+              text: "إنشاء حساب",
+              onPressed: () => context.go(RouterNames.register),
+              color: Colors.transparent,
+              textColor: Colors.white),
           Spacer(),
         ],
       ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:servicely_app1/gen/assets.gen.dart';
+import 'package:servicely_app1/core/utils/assets.gen.dart';
 
 class NotificationBadgeIcon extends StatelessWidget {
   const NotificationBadgeIcon({super.key});

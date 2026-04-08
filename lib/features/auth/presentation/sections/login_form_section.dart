@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:servicely_app1/core/routing/router_names.dart';
 import 'package:servicely_app1/core/theme/app_theme.dart';
-import 'package:servicely_app1/features/auth/presentation/widgets/outlined_register_button.dart';
 import 'package:servicely_app1/features/auth/presentation/widgets/phone_input_field.dart';
 import 'package:servicely_app1/features/auth/presentation/widgets/primary_button.dart';
 
@@ -50,10 +49,11 @@ class _LoginFormSectionState extends State<LoginFormSection> {
                 style: TextStyle(color: secondaryColorHex),
               ),
               const SizedBox(height: 16),
-              const OutlinedRegisterButton(
-                borderColor: secondaryColorHex,
-                textColor: secondaryColorHex,
-              ),
+              PrimaryButton(
+                  text: "انشاء حساب",
+                  onPressed: () => context.go(RouterNames.register),
+                  color: Colors.white,
+                  textColor: secondaryColorHex),
             ],
           ),
         ),

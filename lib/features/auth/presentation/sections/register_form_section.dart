@@ -5,8 +5,8 @@ import 'package:servicely_app1/core/routing/router_names.dart';
 import 'package:servicely_app1/core/theme/app_theme.dart';
 import 'package:servicely_app1/features/auth/presentation/widgets/app_text_field.dart';
 import 'package:servicely_app1/features/auth/presentation/widgets/phone_input_field.dart';
+import 'package:servicely_app1/core/utils/assets.gen.dart';
 import 'package:servicely_app1/features/auth/presentation/widgets/primary_button.dart';
-import 'package:servicely_app1/gen/assets.gen.dart';
 
 class RegisterFormSection extends StatefulWidget {
   const RegisterFormSection({super.key});

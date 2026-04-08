@@ -4,7 +4,7 @@ import 'package:servicely_app1/features/home/presentation/views/home_content_scr
 import 'package:servicely_app1/features/orders/presentation/views/orders_screen.dart';
 import 'package:servicely_app1/features/profile/presentation/views/profile_screen.dart';
 import 'package:servicely_app1/features/more/presentation/views/more_screen.dart';
-import 'package:servicely_app1/gen/assets.gen.dart';
+import 'package:servicely_app1/core/utils/assets.gen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

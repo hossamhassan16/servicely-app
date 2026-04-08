@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:servicely_app1/core/theme/app_theme.dart';
-import 'package:servicely_app1/gen/assets.gen.dart';
+import 'package:servicely_app1/core/utils/assets.gen.dart';
 
 class StatusChip extends StatelessWidget {
   final String title;
